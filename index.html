@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Banner Video</title>
+	<!-- link css -->
+	<link rel="stylesheet" href="css/style.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	
+
+
+
+	<div class="banner">
+		<video id="large-video" autoplay loop playsinline muted > 
+		  <source src="videos/1.mp4" type="video/mp4" >
+		  Your browser does not support the video tag.
+		</video>
+
+		<div class="video-thumbnails">
+
+			<video class="small-video" autoplay loop playsinline muted >
+			  <source src="videos/2.mp4" type="video/mp4" >
+			  Your browser does not support the video tag.
+			</video>
+
+			<video class="small-video" autoplay loop playsinline muted >
+			  <source src="videos/3.mp4" type="video/mp4">
+			  Your browser does not support the video tag.
+			</video>
+
+			<video class="small-video" autoplay loop playsinline muted >
+			  <source src="videos/4.mp4" type="video/mp4">
+			  Your browser does not support the video tag.
+			</video>
+
+		</div>
+		<h1>Nature is love</h1>
+	</div>
+
+  <!-- JQuery CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+  <script>
+   	$(document).ready(function(){
+
+
+   		$('.small-video').click(function(){
+
+   			let url = $(this).children().attr( 'src' )
+
+   			// alert(url)
+
+   			$('#large-video').children().attr( 'src', url );
+   			$('#large-video')[0].load();
+
+   		})
+
+
+
+   	})
+  </script>
+</body>
+</html>
